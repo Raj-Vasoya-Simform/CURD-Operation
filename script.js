@@ -5,7 +5,7 @@ function onFormSubmit(e) {
   event.preventDefault();
   var formData = readFormData();
   if (selectedRow == null) {
-    products.push(formData);
+    products?.push(formData);
     window.localStorage.setItem("products", JSON.stringify(products));
     insertNewRecord(formData);
   } else {
@@ -15,7 +15,7 @@ function onFormSubmit(e) {
 }
 
 function rendarProducts() {
-  products.forEach((product) => {
+  products?.forEach((product) => {
     insertNewRecord(product);
   });
 }
