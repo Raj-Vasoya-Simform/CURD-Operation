@@ -1,11 +1,12 @@
-var products = JSON.parse(window.localStorage.getItem("products"));
+var products = JSON.parse(window.localStorage.getItem("products")) || [];
 var selectedRow = null;
 
 function onFormSubmit(e) {
   event.preventDefault();
   var formData = readFormData();
+  console.log(formData);
   if (selectedRow == null) {
-    products?.push(formData);
+    products.push(formData);
     window.localStorage.setItem("products", JSON.stringify(products));
     insertNewRecord(formData);
   } else {
@@ -15,7 +16,7 @@ function onFormSubmit(e) {
 }
 
 function rendarProducts() {
-  products?.forEach((product) => {
+  products.forEach((product) => {
     insertNewRecord(product);
   });
 }
@@ -50,15 +51,17 @@ function insertNewRecord(data) {
   cell4 = newRow.insertCell(4);
   cell4.innerHTML = data.description;
   cell4 = newRow.insertCell(5);
-  cell4.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
+  cell4.innerHTML = `<a onClick="onEdit(this)" href="edit.html">Edit</a> <button onClick="onDelete(this)">Delete</button>`;
 }
 
 //Edit the data
 function onEdit(td) {
   selectedRow = td.parentElement.parentElement;
+  window.localStorage.setItem("productId", JSON.stringify(selectedRow.cells[0].innerHTML));
   document.getElementById("productId").value = selectedRow.cells[0].innerHTML;
+  console.log(selectedRow.cells[0].innerHTML);
   document.getElementById("productName").value = selectedRow.cells[1].innerHTML;
-  // document.getElementById("image").value = selectedRow.cells[2].innerHTML;
+  //document.getElementById("image").value = selectedRow.cells[2].innerHTML;
   document.getElementById("price").value = selectedRow.cells[3].innerHTML;
   document.getElementById("description").value = selectedRow.cells[4].innerHTML;
 }
