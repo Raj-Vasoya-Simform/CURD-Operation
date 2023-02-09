@@ -33,5 +33,5 @@ function updateData() {
 
   window.localStorage.setItem("products", JSON.stringify(products));
   alert("Product Updated Successfully!");
-  window.location = "./index.html";
+  window.location = "index.html";
 }

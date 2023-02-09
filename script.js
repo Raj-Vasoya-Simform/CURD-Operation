@@ -51,7 +51,18 @@ function insertNewRecord(data) {
   cell4 = newRow.insertCell(4);
   cell4.innerHTML = data.description;
   cell4 = newRow.insertCell(5);
-  cell4.innerHTML = `<a onClick="onEdit(this)" href="edit.html" style=" background: #eee;
+  cell4.innerHTML = `<a onClick="onEdit(this)" href="view.html" style=" background: #eee;
+  padding: 6px 20px;
+  margin: 15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  color : black">View</a>
+  <a onClick="onView(this)" href="edit.html" style=" background: #eee;
   padding: 6px 20px;
   margin: 15px 0 10px;
   display: inline-block;
@@ -74,7 +85,7 @@ function onEdit(td) {
   document.getElementById("productId").value = selectedRow.cells[0].innerHTML;
   console.log(selectedRow.cells[0].innerHTML);
   document.getElementById("productName").value = selectedRow.cells[1].innerHTML;
-  //document.getElementById("image").value = selectedRow.cells[2].innerHTML;
+  // document.getElementById("image").value = selectedRow.cells[2].innerHTML;
   document.getElementById("price").value = selectedRow.cells[3].innerHTML;
   document.getElementById("description").value = selectedRow.cells[4].innerHTML;
 }
