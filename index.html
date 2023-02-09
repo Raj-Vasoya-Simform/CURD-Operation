@@ -38,7 +38,29 @@
                         <input type="reset" value="Reset">
                     </div>
                 </form>
+                
                 <td>
+                    <table class="list" id="showlist">
+                        <form autocomplete="off" id="showDataForm">
+                            <div class="form_action--button">
+                            <input type="text" name="name" id="name" placeholder="Search Product Name">
+                            <input type="submit" value="Search" onclick="showData()" id="btn">
+                            <input type="submit" value="Clear" onclick="clearData()" id="btn">
+                        </div>
+                        </form>
+                        <thead>
+                                <tr>
+                                    <!-- <th>Product Id</th>
+                                    <th>Product Name</th>
+                                    <th>Image</th>
+                                    <th>Price</th>
+                                    <th>Description</th> -->
+                                </tr>
+                            </thead>
+                            <tbody id="pname">
+                
+                            </tbody>
+                        </table> 
                     <table class="list" id="storeList">
                         <thead>
                             <tr>
@@ -57,27 +79,7 @@
             </td>
         </tr>
     </table>
-    <table class="list" id="showlist">
-        <form autocomplete="off" id="showDataForm">
-            <div class="form_action--button">
-            <input type="text" name="name" id="name" placeholder="Search Product Name">
-            <input type="submit" value="Search" onclick="showData()" id="btn">
-            <input type="submit" value="Clear" onclick="clearData()" id="btn">
-        </div>
-        </form>
-        <thead>
-                <tr>
-                    <th>Product Id</th>
-                    <th>Product Name</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody id="pname">
-
-            </tbody>
-        </table>
+    
     <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>

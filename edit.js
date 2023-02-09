@@ -1,7 +1,7 @@
 var proId = JSON.parse(window.localStorage.getItem("productId"));
 console.log(proId);
 var products = JSON.parse(window.localStorage.getItem("products"));
-var edit = products.find((obj) => proId == obj.proId);
+var edit = products.find((obj) => proId == obj.productId);
 console.log(edit);
 
 function onEdit() {
