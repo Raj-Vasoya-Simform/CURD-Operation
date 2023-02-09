@@ -45,7 +45,7 @@ function insertNewRecord(data) {
   cell1 = newRow.insertCell(1);
   cell1.innerHTML = data.productName;
   cell2 = newRow.insertCell(2);
-  cell2.innerHTML = data.image;
+  cell2.innerHTML = `<img src="${data.image}">`;
   cell3 = newRow.insertCell(3);
   cell3.innerHTML = data.price;
   cell4 = newRow.insertCell(4);
@@ -85,7 +85,7 @@ function onEdit(td) {
   document.getElementById("productId").value = selectedRow.cells[0].innerHTML;
   console.log(selectedRow.cells[0].innerHTML);
   document.getElementById("productName").value = selectedRow.cells[1].innerHTML;
-  // document.getElementById("image").value = selectedRow.cells[2].innerHTML;
+  document.getElementById("image").value = selectedRow.cells[2].innerHTML;
   document.getElementById("price").value = selectedRow.cells[3].innerHTML;
   document.getElementById("description").value = selectedRow.cells[4].innerHTML;
 }

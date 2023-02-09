@@ -7,6 +7,7 @@ console.log(edit);
 function onView() {
   document.getElementById("productId").value = edit.productId;
   document.getElementById("productName").value = edit.productName;
+  document.getElementById("image").innerHTML = `<img src="${edit.image}">`;
   document.getElementById("price").value = edit.price;
   document.getElementById("description").value = edit.description;
 }

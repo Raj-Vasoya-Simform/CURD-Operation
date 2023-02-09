@@ -7,7 +7,7 @@ console.log(edit);
 function onEdit() {
   document.getElementById("productId").value = edit.productId;
   document.getElementById("productName").value = edit.productName;
-  //document.getElementById("image").value = edit.image;
+  document.getElementById("image").value = edit.image;
   document.getElementById("price").value = edit.price;
   document.getElementById("description").value = edit.description;
 }
@@ -32,6 +32,6 @@ function updateData() {
   }
 
   window.localStorage.setItem("products", JSON.stringify(products));
-  alert("Product Updated Successfully!");
-  window.location = "index.html";
+  // alert("Product Updated Successfully!");
+  window.location.replace = "/index.html";
 }
