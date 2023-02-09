@@ -1,7 +1,7 @@
-var productId = JSON.parse(window.localStorage.getItem("productId")) || [];
-console.log(productId);
-var products = JSON.parse(window.localStorage.getItem("products")) || [];
-var edit = products.find((obj) => productId == obj.productId);
+var proId = JSON.parse(window.localStorage.getItem("productId"));
+console.log(proId);
+var products = JSON.parse(window.localStorage.getItem("products"));
+var edit = products.find((obj) => proId == obj.proId);
 console.log(edit);
 
 function onEdit() {
