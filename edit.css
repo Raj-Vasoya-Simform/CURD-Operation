@@ -45,6 +45,19 @@ input[type="reset"] {
   cursor: pointer;
   outline: none;
 }
+#submit{
+  margin-left: 700px;
+  background: #eee;
+  padding: 6px 20px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  color : black;
+}
 
 #productId {
   margin-left: 60px;

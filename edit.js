@@ -32,6 +32,5 @@ function updateData() {
   }
 
   window.localStorage.setItem("products", JSON.stringify(products));
-  // alert("Product Updated Successfully!");
-  window.location.replace = "/index.html";
+  alert("Product Updated Successfully!");
 }
