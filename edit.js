@@ -7,20 +7,31 @@ console.log(edit);
 function onEdit() {
   document.getElementById("productId").value = edit.productId;
   document.getElementById("productName").value = edit.productName;
-  //document.getElementById("image").value = edit.productId;
+  //document.getElementById("image").value = edit.image;
   document.getElementById("price").value = edit.price;
   document.getElementById("description").value = edit.description;
 }
-function updateRecord(formData) {
-  selectedRow.cells[0].innerHTML = formData.productId;
-  selectedRow.cells[1].innerHTML = formData.productName;
-  selectedRow.cells[2].innerHTML = formData.image;
-  selectedRow.cells[3].innerHTML = formData.price;
-  selectedRow.cells[4].innerHTML = formData.description;
-}
-onEdit();
-//   `<button onClick="onEdit(this)">Edit</button>'
 
-function onFormSubmit(){
-   console.log(products.remove(edit.productId));
+onEdit();
+
+//updateData method
+function updateData() {
+  var productId = document.getElementById("productId").value;
+  var productName = document.getElementById("productName").value;
+  var image = document.getElementById("image").value;
+  var price = document.getElementById("price").value;
+  var description = document.getElementById("description").value;
+
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].productId == productId) {
+      products[i].productName = productName;
+      products[i].image = image;
+      products[i].price = price;
+      products[i].description = description;
+    }
+  }
+
+  window.localStorage.setItem("products", JSON.stringify(products));
+  alert("Product Updated Successfully!");
+  window.location = "./index.html";
 }

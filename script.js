@@ -51,13 +51,26 @@ function insertNewRecord(data) {
   cell4 = newRow.insertCell(4);
   cell4.innerHTML = data.description;
   cell4 = newRow.insertCell(5);
-  cell4.innerHTML = `<a onClick="onEdit(this)" href="edit.html">Edit</a> <button onClick="onDelete(this)">Delete</button>`;
+  cell4.innerHTML = `<a onClick="onEdit(this)" href="edit.html" style=" background: #eee;
+  padding: 6px 20px;
+  margin: 15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  color : black">Edit</a> <button onClick="onDelete(this)">Delete</button>`;
 }
 
 //Edit the data
 function onEdit(td) {
   selectedRow = td.parentElement.parentElement;
-  window.localStorage.setItem("productId", JSON.stringify(selectedRow.cells[0].innerHTML));
+  window.localStorage.setItem(
+    "productId",
+    JSON.stringify(selectedRow.cells[0].innerHTML)
+  );
   document.getElementById("productId").value = selectedRow.cells[0].innerHTML;
   console.log(selectedRow.cells[0].innerHTML);
   document.getElementById("productName").value = selectedRow.cells[1].innerHTML;
